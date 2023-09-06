@@ -1,18 +1,28 @@
+:root{
+    --accent1: #fff4c9;
+    --background: #c7e78b;
+    --accent2: #81ae64;
+    --contrast: #709053;
+}
+
 html{
     margin: 0;
     padding: 0;
+    background-color: var(--background);
 }
 
 #navbar{
     position: fixed;
     overflow: hidden;
     top: 0;
+    left: 0;
     width: 100%;
-    background-color: green;
+    background-color: var(--accent1);
+    z-index: 1;
 }
 
 #navbar a{
-    float: left;
+    float: right;
     display: block;
     text-align: center;
     padding: 12px 12px;
@@ -20,11 +30,20 @@ html{
     font-size: 24px;
     margin: 5px;
     gap: 5px;
+    color: var(--contrast);
 }
 
 #navbar a:hover{
-    background: lime;
-    color: black;
+    background: var(--accent2);
+    color: var(--accent1);
+}
+
+#navbar a:visited, a:active{
+    color: var(--contrast);
+}
+
+#navbar a:visited:hover{
+    color: var(--accent1);
 }
 
 main{
@@ -32,26 +51,40 @@ main{
 }
 
 .welcome-section{
-    background: radial-gradient(lightgreen, green);
+    background: radial-gradient(var(--accent1), var(--accent2));
     width: 100vw;
     height: 100vh;
-    display: block;
     padding: 25px;
+    text-align: center;
+    position: relative;
 }
 
+
 .welcome-section h1{
-    top: 40%;
-    position: absolute;
-    font-size: 60px;
+    width: 100%;
+    font-size: 6vw;
     font-weight: bold;
     font-variant: small-caps;
+    color: var(--contrast);
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
 }
 
 .welcome-section p{
-    top: 52%;
-    left: 18%;
+    font-size: 3vw;
+    width: 100%;
+    margin: auto;
     position: absolute;
-    font-size: 32px;
+    top: 65%;
+    margin-top: -16px;
+    color: var(--contrast);
+}
+
+#projects h2{
+    text-align: center;
+    font-size: 2.5vw;
 }
 
 #project-grid{
@@ -63,7 +96,7 @@ main{
 
 .project-tile{
     border: 1px solid transparent;
-    background-color: lemonchiffon;
+    background-color: var(--accent1);
     border-radius: 10%;
     width: 30%;
     height: 30%;
@@ -80,5 +113,38 @@ main{
 .project-tile a p{
     margin-top: 5px;
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
+}
+
+#contact{
+    background-color: var(--accent2);
+    color: var(--accent1);
+}
+
+#contact h2{
+    font-size: 3vw;
+    text-align: center;
+    padding: 10px;
+    font-variant: small-caps;
+}
+
+#social-links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+#profile-link{
+    padding: 5px;
+    color: var(--accent1);
+    text-decoration: none;
+}
+
+#profile-link a:visited{
+    color: var(--accent1);
+}
+
+#profile-link:last-of-type{
+    margin-bottom: 10px;
 }
